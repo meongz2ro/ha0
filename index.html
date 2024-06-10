@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박하영-시맨틱 태그/레이아웃(370p)-24.06.07</title>
+
+    <!-- 나눔고딕 -->
+    <link href="https://fonts.googleapis.com/
+    css2?family=Nanum+Gothic:wght@400;700&display=swap"
+    rel="stylesheet">
+
+    <style>
+        * {margin: 0; padding: 0;}
+
+        a {text-decoration: none;}
+
+        li {list-style: none;}
+
+        body {
+            font-family: 'NanumGothic';
+            /* 제일 앞에 있는 폰트가 우선 */
+            background-color: #ffffff;
+            }
+
+
+
+        /* 헤더 - 배경, 글씨 색, 안쪽 여백, 글씨 정렬 */
+        header {
+            background-color: #ffd392;
+            color: #5a2a00;
+
+            padding: 20px;
+            text-align: center;
+            }
+        
+
+        header a {
+            color: #7c5804;
+            font-weight: bold;
+            }
+
+        header a:hover {
+            text-decoration: underline;
+            }
+
+
+        nav ul {
+            display: flex;
+            gap: 50px;
+            /* flex에서만 나오는 바깥 여백 */
+            justify-content: center;
+            /* flex에서만 나오는 수평 중앙 정렬 */
+            margin-top: 30px;
+            flex-wrap: wrap;
+            }
+
+
+
+
+        /* 콘텐츠 영역 - section
+        상하좌우 안쪽 여백, 상단하단 바깥 여백 + 중앙 정렬, 가로 사이즈 800 */
+        section {
+            max-width: 800px;
+            /* max 안 붙이면 반응형 안 됨 */
+            margin: 50px auto;
+            /* 상하 20, 좌우 오토(중앙 정렬) */
+            padding: 20px;
+            /* 상하좌우 20 */
+            border: 1px solid #ffbe5e;
+            }
+
+        section h2 {
+            margin-bottom: 30px;
+            color: #ff9e1f;
+            font-size: 25px;
+            text-align: center;
+            }
+
+        section article {
+            /* 배경 색, 둥근 사각형, 그림자, 안쪽 여백, 바깥 하단 여백 */
+            background-color: #fff;
+            box-shadow: 0 6px 8px rgba(255, 181, 61, 0.2);
+            /* x, y, 흐림 효과, 색 + 투명도 */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+
+        section article h3 {
+            margin-bottom: 30px;
+            color: #ffba5f;
+            font-size: 20px;
+            }
+
+        /* section hr {
+            margin: 20px;
+            } */
+
+
+        section article ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            /* 자동으로 다음 줄 넘어감 */
+            gap:10px;
+            }
+
+        article ul li {
+            list-style: none;
+            height: 250px;
+            flex: 1 1 calc(25% - 10px);
+            max-width: calc(25% - 10px);
+            }
+
+        section article ul li img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            }
+
+        section article div {
+            /* border: 1px solid #ffd392; */
+            margin: 30px 0 10px 0;
+            /* 상단, 오른쪽, 하단, 왼쪽 */
+        }
+
+        section article div p {
+            font-size: 14px;
+            color: #5a2a00;
+            margin: 5px;
+            line-height: 1.6;
+        }
+
+        /* ai 버튼 */
+        section article div a.ai {
+            padding: 10px 20px;
+            background-color: #ffd392;
+            color: #5a2a00;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        section article div a.ai:hover {
+            opacity: .7;
+            /* 70% 투명도 */
+        }
+
+
+        footer {
+            background-color: #ffd392;
+            color: #5a2a00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+        footer p a {
+            font-weight: bold;
+            color: #000;
+        }
+
+      
+
+
+
+        /* 타블렛 구조 (2단) */
+        @media (max-width: 1200px) {
+            article ul li {
+                flex: 1 1 calc(50% - 10px);
+                /* 2 columns */
+                max-width: calc(50% - 10px);  height: auto;
+            }
+        }
+
+
+        /* 모바일 구조 (1단) */
+        @media (max-width:700px) {
+            nav ul {
+                display: block;
+                text-align: center;
+                }
+            nav li {
+                display: block;
+                margin: 15px 0;
+                padding: 10px;
+                border-bottom: 1px dotted #ab6d279b;
+            }
+
+            article ul li {
+                flex: 1 1 100%;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <!-- 헤더 : 로고(h1)와 메뉴(nav)가 있는 영역 -->
+    <header>
+        <h1>반려강쥐</h1>
+        <nav>
+            <ul>
+                <li><a href="#">반려견 종류를 알아보자멍</a></li>
+                <li><a href="#">입양해 보자멍</a></li>
+                <li><a href="#">건강 챙겨 보자멍</a></li>
+                <li><a href="#">더불어 살아 보자멍</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>활달강쥐</h2>
+        <article>
+            <h3>🐾요크셔테리어(ʏᴏʀᴋꜱʜɪʀᴇ ᴛᴇʀʀɪᴇʀ)🐾</h3>
+
+            <!-- 사진 -->
+            <ul>
+                <li><a href="#"><img src="./images(dog)/1.jpg" alt="요크셔테리어1"></a></li>
+                <li><a href="#"><img src="./images(dog)/2.jpg" alt="요크셔테리어2"></a></li>
+                <li><a href="#"><img src="./images(dog)/3.jpg" alt="요크셔테리어3"></a></li>
+                <li><a href="#"><img src="./images(dog)/4.jpg" alt="요크셔테리어4"></a></li>
+            </ul>
+
+            <div>
+                <p>1. 작은 체구: 요크셔테리어는 작은 체구를 가지고 있지만,
+                에너지가 넘치고 매우 활발합니다.</p>
+                <p>2. 똑똑하고 호기심 많음: 이들은 매우 영리하며 호기심이 많아
+                새로운 것을 탐구하고 배우는 것을 좋아합니다.</p>
+                <p>3. 호위 본능: 자신의 가족을 보호하려는 강한 본능이 있으며,
+                낯선 사람이나 다른 동물에게 경계심을 보일 수 있습니다.</p>
+            </div>
+
+            <!-- 버튼 -->
+            <div>
+                <a href="#" class="ai">AI 감정 읽기</a>
+            </div>
+        </article>
+        <!-- <hr> -->
+        <article>
+            <h3>🐾비숑 프리제(ʙɪᴄʜᴏɴ ꜰʀɪꜱᴇ)🐾</h3>
+
+            <ul>
+                <li><a href="#"><img src="./images(dog)/b1.jpg" alt="비숑 프리제1"></a></li>
+                <li><a href="#"><img src="./images(dog)/b2.jpg" alt="비숑 프리제2"></a></li>
+                <li><a href="#"><img src="./images(dog)/b3.jpg" alt="비숑 프리제3"></a></li>
+                <li><a href="#"><img src="./images(dog)/b4.jpg" alt="비숑 프리제4"></a></li>
+            </ul>
+
+            <div>
+                <p>1. 사회적이고 친근함: 비숑 프리제는 매우 사회적이고
+                사람들과의 교류를 즐깁니다. 낯선 사람에게도 친근하게
+                다가가는 성격입니다.</p>
+                <p>2. 항상 긍정적임: 이들은 밝고 긍정적인 성격을 가지고 있어,
+                항상 기분이 좋은 것처럼 보입니다.</p>
+                <p>3. 튼튼한 체력: 작은 체구에 비해 체력이 좋아서 많은 활동을
+                필요로 하고, 긴 산책이나 놀이 시간을 즐깁니다.</p>
+            </div>
+
+            <!-- 버튼 -->
+            <div>
+                <a href="#" class="ai">AI 감정 읽기</a>
+            </div>
+        </article>
+        <!-- <hr> -->
+        <article>
+            <h3>🐾파피용(ᴘᴀᴘɪʟʟᴏɴ)🐾</h3>
+
+            <ul>
+                <li><a href="#"><img src="./images(dog)/p1.jpg" alt="파피용1"></a></li>
+                <li><a href="#"><img src="./images(dog)/p2.jpg" alt="파피용2"></a></li>
+                <li><a href="#"><img src="./images(dog)/p3.jpg" alt="파피용3"></a></li>
+                <li><a href="#"><img src="./images(dog)/p4.jpg" alt="파피용4"></a></li>
+            </ul>
+
+            <div>
+                <p>1. 우아한 외모: 파피용은 나비 모양의 귀 때문에 이름이 붙었으며,
+                우아한 외모를 자랑합니다.</p>
+                <p>2. 활발하고 민첩함: 매우 활발하고 민첩하며,
+                높은 지능으로 다양한 트릭과 명령을 쉽게 배웁니다.</p>
+                <p>3. 대담하고 자신감 넘침: 작은 크기에도 불구하고
+                대담하고 자신감 넘치는 성격을 가지고 있습니다.
+                다른 강아지나 사람들과의 상호작용을 즐깁니다.</p>
+            </div>
+            <!-- 버튼 -->
+            <div>
+                <a href="#" class="ai">AI 감정 읽기</a>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <!-- &copy; : ⓒ 카피라이터 엔티티 기호 -->
+        <p>
+            &copy;
+            <a href="mailto:dog@dog.com">
+            Dog Dreamland corp.</a>
+            All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>
